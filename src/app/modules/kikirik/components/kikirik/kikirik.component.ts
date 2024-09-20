@@ -8,10 +8,9 @@ import { library, playCircle, radio, search } from 'ionicons/icons';
   styleUrls: ['./kikirik.component.scss'],
 })
 export class KikirikComponent implements OnInit {
+  nombreUsuario: string = sessionStorage.getItem('user-name') || '';
 
-  constructor() {
-    addIcons({ library, playCircle, radio, search });
-  }
+  constructor() {}
 
 
   ngOnInit() { }

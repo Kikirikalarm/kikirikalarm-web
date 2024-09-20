@@ -26,7 +26,7 @@ export class LoginComponent {
 
   iniciarSesion() {
     let user = this.formLogin.value.usuario!;
-    localStorage.setItem('user-name', user)
+    sessionStorage.setItem('user-name', user)
     this.LoginService.login();
     this.router.navigate(['/kikirik']);
   }
