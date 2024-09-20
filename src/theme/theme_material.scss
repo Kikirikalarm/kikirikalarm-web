@@ -1,0 +1,53 @@
+@use "@angular/material" as mat;
+@use "../styles/typography/config" as typography;
+@import "../styles/colors/am-colors";
+
+@include mat.core();
+
+// Define tus paletas de colores
+$app-primary: mat.define-palette($blue-primary, 800);
+$app-accent: mat.define-palette($orange-secondary, 700);
+$app-warn: mat.define-palette(mat.$red-palette, A700);
+
+// Define el tema claro
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-primary,
+      accent: $app-accent,
+      warn: $app-warn
+    ),
+    typography: typography.$my-app-typography,
+    density: 0
+  )
+);
+
+// Define el tema oscuro
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $app-primary,
+      accent: $app-accent,
+      warn: $app-warn
+    ),
+    typography: typography.$my-app-typography,
+    density: 0
+  )
+);
+//  @include mat.all-component-themes($light-theme);
+@include mat.all-component-themes($light-theme);
+// Dark Theme
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+}
+
+.light-theme {
+  --text-color: black;
+  --line-color: black;
+}
+
+// Variables de color para tema oscuro
+.dark-theme {
+  --text-color: white;
+  --line-color: white;
+}

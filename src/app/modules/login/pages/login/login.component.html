@@ -1,0 +1,73 @@
+<div class="flex justify-center items-center w-full h-full p-16">
+  <div class="flex w-1/2 content-center justify-center ">
+    <mat-card class="flex content-center justify-center p-4">
+      <img src="/assets/kikirik/logo_title_transparent.svg" width="300px" height="300px" alt="Logo kikirik Alarm">
+    </mat-card>
+  </div>
+  <div class="flex w-1/2 justify-center">
+    <mat-card class="flex w-4/5 h-full overflow-auto py-11 px-16">
+      <div class="flex w-full h-full justify-center content-center">
+        <form [formGroup]="formLogin" (ngSubmit)="iniciarSesion()"
+          class="flex flex-col gap-6 w-full justify-center content-center">
+          <span class="text-4xl font-bold text-center">
+            Iniciar Sesión
+          </span>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Usuario" type="text" autocomplete="username" formControlName="usuario">
+            <mat-hint>Ingrese su nombre de usuario</mat-hint>
+            <mat-error *ngIf="formLogin.controls.usuario.invalid">El usuario es obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Contraseña</mat-label>
+            <input matInput placeholder="Contraseña" autocomplete="current-password" [type]="hide ? 'password' : 'text'"
+              formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Passwor Oculta'"
+              [attr.aria-pressed]="hide" type="button">
+              <mat-icon class="material-symbols-rounded">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint>Ingrese su contraseña</mat-hint>
+            <mat-error *ngIf="formLogin.controls.password.invalid">La contraseña es obligatoria</mat-error>
+          </mat-form-field>
+
+          <div class="flex flex-col gap-5">
+
+            <button mat-raised-button color="primary" type="submit" class="w-full text-sm"
+              [disabled]="formLogin.invalid">
+              <mat-icon class="material-symbols-rounded">passkey</mat-icon>
+              Iniciar Sesión
+            </button>
+
+            <button mat-stroked-button type="button" class="w-full text-sm" (click)="irRegistro()">
+              Registrarse
+            </button>
+            <div class="line-text">o</div>
+
+            <button mat-raised-button color="primary" type="button" class="w-full text-sm button-google"
+              (click)="iniciarSesion()">
+              <mat-icon class="material-symbols-rounded" svgIcon="google"></mat-icon>
+              Iniciar en Google
+            </button>
+            <div>
+              <button mat-raised-button color="primary" type="button" class="w-full text-sm button-facebook"
+                (click)="iniciarSesion()">
+                <mat-icon class="material-symbols-rounded" svgIcon="facebook"></mat-icon>
+                Iniciar en Facebook
+              </button>
+            </div>
+            <div>
+              <button mat-raised-button color="primary" type="button" class="w-full text-sm button-apple"
+                (click)="iniciarSesion()">
+                <mat-icon class="material-symbols-rounded" svgIcon="apple"></mat-icon>
+                Iniciar con Apple
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+
+</div>

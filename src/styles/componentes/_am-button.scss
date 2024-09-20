@@ -1,0 +1,34 @@
+@use "@angular/material" as mat;
+@import "../colors/am-colors";
+// Mixin para el borde de 25px
+@mixin border-25 {
+  border-radius: 25px !important;
+}
+
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-outlined-button,
+.mdc-button.mat-mdc-button {
+  @include border-25;
+}
+
+// Estilo personalizado para el botón
+.my-custom-button {
+  background-color: #e600ff !important; // Color de fondo personalizado
+  color: white !important; // Color del texto
+}
+
+.button-google {
+  background-color: #296cea !important; // Color de fondo de Google
+  color: white !important; // Color del texto
+}
+
+.button-facebook {
+  background-color: #4063b3 !important; // Color de fondo de Facebook
+  color: white !important; // Color del texto
+}
+
+.button-apple {
+  background-color: #000000 !important; // Color de fondo de Twitter
+  color: white !important; // Color del texto
+}

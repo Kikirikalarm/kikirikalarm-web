@@ -1,0 +1,72 @@
+<div class="flex justify-center items-center w-full h-full p-16">
+  <div class="flex w-1/2 content-center justify-center ">
+    <mat-card class="flex content-center justify-center p-4">
+      <img src="/assets/kikirik/logo_title_transparent.svg" width="300px" height="300px" alt="Logo kikirik Alarm">
+    </mat-card>
+  </div>
+  <div class="flex w-1/2 justify-center">
+    <mat-card class="flex w-4/5 h-full overflow-auto py-11 px-16">
+      <div class="flex w-full h-full justify-center content-center">
+        <form [formGroup]="formRegister" (ngSubmit)="registrarse()"
+          class="flex flex-col gap-6 w-full justify-center content-center">
+          <span class="text-4xl font-bold text-center">
+            Registrarse
+          </span>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Nombre de usuario</mat-label>
+            <input matInput required formControlName="nombreUsuario">
+            <mat-hint>Ingresa el nombre que quieres para tu usuario</mat-hint>
+            <mat-error *ngIf="formRegister.controls.nombreUsuario.invalid">El nombre usuario es requerido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Nombres</mat-label>
+            <input matInput required formControlName="nombres">
+            <mat-hint>Ingrese sus nombres</mat-hint>
+            <mat-error *ngIf="formRegister.controls.nombres.invalid">Sus nombres son requeridos</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Apellidos</mat-label>
+            <input matInput required formControlName="apellidos">
+            <mat-hint>Ingrese sus apellidos</mat-hint>
+            <mat-error *ngIf="formRegister.controls.apellidos.invalid">Sus apellidos son requeridos</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput required formControlName="correo">
+            <mat-hint>Ingresa el nombre que quieres para tu usuario</mat-hint>
+            <mat-error *ngIf="formRegister.controls.correo.hasError('email') && !formRegister.hasError('required')">
+              El correo electrónico no es válido
+            </mat-error>
+            <mat-error *ngIf="formRegister.controls.correo.hasError('required')">
+              El correo electrónico es requerido
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Teléfono</mat-label>
+            <span matPrefix>+57 &nbsp;</span>
+            <input matInput formControlName="telefono" appNumbersOnly>
+            <mat-hint>Ingrese su numero de teléfono</mat-hint>
+          </mat-form-field>
+
+          <div class="flex gap-5 justify-end">
+
+            <button mat-stroked-button type="button" class="text-sm">
+              Cancelar
+            </button>
+
+            <button mat-raised-button color="primary" type="submit" class="text-sm" [disabled]="formRegister.invalid">
+              Registrarse
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+
+</div>
