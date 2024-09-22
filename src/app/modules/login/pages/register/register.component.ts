@@ -37,4 +37,8 @@ export class RegisterComponent {
     this.loginService.login();
     this.router.navigate(['/kikirik']);
   }
+
+  cancelar(){
+    this.router.navigate(['/login']);
+  }
 }

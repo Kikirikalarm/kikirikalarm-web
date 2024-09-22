@@ -2,9 +2,64 @@
   <span class="text-xl">KikirikAlarm</span>
   <span class="example-spacer"></span>
   <span class="text-xl mr-8">{{nombreUsuario}}</span>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="openConfig()">
     <mat-icon class="material-symbols-rounded">manufacturing</mat-icon>
   </button>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-drawer-container class="w-full h-full" autosize>
+  <mat-drawer #drawer class="sidenav h-full" mode="side">
+    <div class="w-full flex flex-col p-8 gap-3 items-center">
+      <span class="text-4xl font-bold mb-3">Configuración</span>
+      <div class="flex flex-col w-full gap-3">
+        <mat-card routerLink="/kikirik/perfil-usuario" routerLinkActive="active-link" matRipple
+          class="h-20 w-full items-center justify-center">
+          <div class="text-2xl">
+            <span> Perfil Usuario</span>
+          </div>
+        </mat-card>
+
+        <mat-card routerLink="/kikirik/marcadores" routerLinkActive="active-link" matRipple
+          class="h-20 w-full items-center justify-center">
+          <div class="text-2xl">
+            <span> Crear Marcadores</span>
+          </div>
+        </mat-card>
+
+        <mat-card routerLink="/kikirik/asistentes-virtuales" routerLinkActive="active-link" matRipple
+          class="h-20 w-full items-center justify-center">
+          <div class="text-2xl">
+            <span> Integrar asistente virtual</span>
+          </div>
+        </mat-card>
+
+        <mat-card routerLink="/kikirik/servicios-audio" routerLinkActive="active-link" matRipple
+          class="h-20 w-full items-center justify-center">
+          <div class="text-2xl">
+            <span> Integrar servicios de audio</span>
+          </div>
+        </mat-card>
+
+        <mat-card matRipple class="h-20 w-full items-center justify-center" (click)="logout()">
+          <div class="text-2xl">
+            <span> cerrar sesión</span>
+          </div>
+        </mat-card>
+
+        <mat-card (click)="volver()" matRipple
+          class="h-20 w-full items-center justify-center">
+          <div class="text-2xl">
+            <span> volver</span>
+          </div>
+        </mat-card>
+
+
+      </div>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

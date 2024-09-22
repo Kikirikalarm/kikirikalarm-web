@@ -66,7 +66,7 @@ ion-tab-bar {
   --indicator-color: #ffffff; /* Color del indicador debajo de la pestaña */
 }
 
-ion-tab-button.tab-selected{
+ion-tab-button.tab-selected {
   font-size: medium;
 }
 
@@ -83,9 +83,8 @@ ion-tab-button.tab-selected{
 
 .snack-bar-propio {
   position: relative !important;
-  top: -60px !important;
+  top: 60px !important;
 }
-
 
 ::-webkit-scrollbar-track {
   background-color: #eeeeee;
@@ -102,4 +101,10 @@ ion-tab-button.tab-selected{
 ::-webkit-scrollbar-thumb {
   background-color: #1a7783;
   border-radius: 20px;
+}
+
+.custom-tooltip {
+  background-color: #333;
+  color: white;
+  font-size: 14px;
 }

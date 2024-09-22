@@ -1,3 +1,70 @@
-<p>
-  alarmas works!
-</p>
+<div class="flex w-full h-full py-16 p-5 gap-20">
+  <div class="w-2/3">
+    <div class="w-full">
+      <div class="flex items-center justify-between">
+        <button mat-button (click)="openModal()">
+          <span class="text-base"> {{ currentDate | date: 'MMMM yyyy' }}</span>
+        </button>
+        <div class="flex gap-1">
+          <button mat-icon-button (click)="prevMonth()">
+            <mat-icon>arrow_back_ios_new</mat-icon>
+          </button>
+          <!-- <button mat-button (click)="todaySelected()">Hoy</button> -->
+          <button mat-icon-button (click)="todaySelected()">
+            <span class="icon-today">{{currentDate | date:'dd'}}</span>
+          </button>
+          <button mat-icon-button (click)="nextMonth()">
+            <mat-icon>arrow_forward_ios </mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div #calendarContainer class="container-calendar" *ngIf="alarmas.length > 0">
+        <full-calendar #calendar class="custom-calendar" [options]="calendarOptions"></full-calendar>
+      </div>
+    </div>
+
+  </div>
+  <div class="w-2/6">
+    <p class="text-2xl mb-5">Lista de alarmas</p>
+
+    <div id="container-tareas" class="container-tareas flex flex-col px-3 gap-3">
+      <div *ngFor="let item of eventsSelectedDate; let i=index" class="flex w-full items-start justify-center gap-4 ">
+        <div class="flex flex-col items-center justify-center">
+          <span class="text-sm font-bold">{{item.start | date:'ccc'}}</span>
+          <span class="text-sm font-bold">{{item.start | date:'dd'}}</span>
+        </div>
+        <div class="flex w-full">
+          <mat-card class="w-full">
+            <div class="flex w-full items-center justify-between p-1">
+              <div class="flex">
+                <div class="flex items-center justify-center">
+                  <mat-icon class="text-sm"
+                    class="material-symbols-rounded">{{item.extendedProps['alarma']['marcador']['icono']}}</mat-icon>
+                </div>
+                <div class="flex flex-col p-1">
+                  <span class="text-sm">{{item.extendedProps['alarma']['nombre']}}</span>
+                  <span class="text-sm">{{item.extendedProps['alarma']['horaDate'] | date: 'HH:mm'}}</span>
+                </div>
+              </div>
+              <div class="flex">
+                <button mat-icon-button color="warn" (click)="eliminarAlarma(item.extendedProps['alarma'])">
+                  <mat-icon class="material-symbols-rounded">delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="min-h-3 w-full" *ngIf="eventsSelectedDate.length"></div>
+      <div *ngIf="eventsSelectedDate.length === 0">
+        <div class="flex items-center justify-center">
+          <span class="text-sm">No hay tareas para este día</span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

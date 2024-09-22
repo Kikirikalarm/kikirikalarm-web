@@ -1,0 +1,44 @@
+<div class="container-principal">
+
+  <mat-card class="flex flex-col items-center justify-center w-[455px] p-6 pb-16">
+    <div class="flex flex-col items-center gap-16">
+      <div>
+        <span class="font-bold text-3xl">Integrar servicios de audio</span>
+      </div>
+      <div class="flex flex-col gap-5">
+
+        <mat-card class="w-[300px] h-[150px] p-6 items-center justify-center cursor-pointer" matRipple
+          (click)="confServicioAudio('https://music.youtube.com/')">
+          <div>
+            <span class="text-base">Youtube Music</span>
+          </div>
+          <div>
+            <img src="assets/kikirik/servicios-externos-logos/YT_Music.png" width="150px" alt="Google Assistant">
+          </div>
+        </mat-card>
+        <mat-card class="w-[300px] h-[150px]  p-10 items-center justify-center cursor-pointer" matRipple
+          (click)="confServicioAudio('https://www.spotify.com/')">
+          <div>
+            <span class="text-base">Spotify</span>
+          </div>
+          <div>
+            <img src="assets/kikirik/servicios-externos-logos/Spotify_logo_with_text.png" width="150px"
+              alt="Amazon alexa">
+          </div>
+        </mat-card>
+
+        <mat-card class="w-[300px] h-[150px]  p-10 items-center justify-center cursor-pointer" matRipple
+          (click)="confServicioAudio('https://www.apple.com/co/apple-music/')">
+          <div>
+            <span class="text-base">Apple Music</span>
+          </div>
+          <div>
+            <img src="assets/kikirik/servicios-externos-logos/Apple-Music-Logo-2015-present.png" width="150px"
+              alt="Amazon alexa">
+          </div>
+        </mat-card>
+      </div>
+
+    </div>
+  </mat-card>
+</div>

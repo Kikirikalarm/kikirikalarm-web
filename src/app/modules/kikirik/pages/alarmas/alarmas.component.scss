@@ -1,0 +1,19 @@
+.container-calendar {
+  width: 100%;
+}
+
+
+.icon-today {
+  font-size: 15px;
+  font-weight: 600;
+  border: solid 2px;
+  border-radius: 3px;
+  border-bottom-right-radius: 10px;
+  top: -4px;
+  position: relative;
+}
+
+.container-tareas {
+  overflow-y: auto;
+  max-height: calc(100% - 10rem);
+}
