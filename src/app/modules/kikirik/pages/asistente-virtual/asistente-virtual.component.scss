@@ -1,0 +1,9 @@
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 64px);
+  padding: 3.0rem
+}

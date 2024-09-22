@@ -1,0 +1,33 @@
+<div class="container-principal">
+
+  <mat-card class="flex flex-col items-center justify-center w-[455px] p-6 pb-32">
+    <div class="flex flex-col items-center gap-16">
+      <div>
+        <span class="font-bold text-3xl">Integrar asistente virtual</span>
+      </div>
+      <div class="flex flex-col gap-5">
+
+        <mat-card class="w-[300px] h-[200px] p-6 items-center justify-center cursor-pointer" matRipple
+          (click)="confAsistente('https://assistant.google.com/intl/es_es/')">
+          <div>
+            <span class="text-base">Google Assistant</span>
+          </div>
+          <div>
+            <img src="assets/kikirik/servicios-externos-logos/Logo_Google_Assistant.png" width="150px"
+              alt="Google Assistant">
+          </div>
+        </mat-card>
+        <mat-card class="w-[300px] h-[200px]  p-10 items-center justify-center cursor-pointer" matRipple
+        (click)="confAsistente('https://www.alexa.com/')">
+          <div>
+            <span class="text-base">Amazon Alexa</span>
+          </div>
+          <div>
+            <img src="assets/kikirik/servicios-externos-logos/Alexa-Logo-2017.png" width="150px" alt="Amazon alexa">
+          </div>
+        </mat-card>
+      </div>
+
+    </div>
+  </mat-card>
+</div>
