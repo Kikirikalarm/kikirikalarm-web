@@ -1,0 +1,21 @@
+.container-principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 64px);
+  padding: 3rem 1rem;
+  overflow: hidden;
+  gap: 1.5rem;
+}
+
+.list-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.float-button {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+}

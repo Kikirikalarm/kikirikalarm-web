@@ -22,13 +22,13 @@ import { OnlyNumbersDirective } from './directives/only-numbers.directive';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMatColorPickerModule,
     MaterialModule,
     RouterModule,
     IonicModule,
     FullCalendarModule,
-    NgxMatColorPickerModule,
     HttpClientModule,
-    NgxMatTimepickerModule.setLocale('es-CO'),
+    NgxMatTimepickerModule.setLocale('es-CO')
   ],
   exports: [
     FormsModule,

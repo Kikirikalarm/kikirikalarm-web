@@ -108,3 +108,9 @@ ion-tab-button.tab-selected {
   color: white;
   font-size: 14px;
 }
+
+@media (prefers-color-scheme: dark) {
+  .ngx-mat-colorpicker-content {
+    background-color: #424242 !important;
+  }
+}

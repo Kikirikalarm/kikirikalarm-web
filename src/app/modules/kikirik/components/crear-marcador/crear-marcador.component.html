@@ -1,0 +1,65 @@
+<mat-card class="flex flex-col items-center justify-center w-[394px] p-6 px-10 h-full">
+  <div class="flex flex-col items-center gap-10 w-full h-full">
+    <div>
+      <span class="font-bold text-[40px]">{{titulo}}</span>
+    </div>
+    <form [formGroup]="formMarcador" class="flex flex-col gap-5 w-full h-full px-2 justify-between">
+      <div class="flex flex-col gap-5 w-full">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre Marcador</mat-label>
+          <input matInput formControlName="nombre">
+          <mat-hint>Ingrese el nombre de un marcador</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Color</mat-label>
+          <input matInput formControlName="color" [ngxMatColorPicker]="picker" readonly>
+          <button mat-icon-button matSuffix type="button" (click)="picker.open()">
+            <mat-icon [ngStyle]="{'color': formMarcador.controls.color.value}">circle</mat-icon>
+          </button>
+          <ngx-mat-color-picker #picker [touchUi]="true" ></ngx-mat-color-picker>
+          <mat-hint>Seleccione un color para el marcador</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Icono del marcador</mat-label>
+          <input matInput formControlName="icono" readonly>
+          <button mat-icon-button matSuffix (click)="abrirSelectorIcon()">
+            <mat-icon class="material-symbols-rounded">
+              {{formMarcador.controls.icono.value || 'add_reaction'}}
+            </mat-icon>
+          </button>
+          <mat-hint>Seleccione un icono de marcador</mat-hint>
+        </mat-form-field>
+
+        <div class="flex flex-col w-full items-center pt-6">
+          <mat-icon class="vistaPreviaIcon text-5xl material-symbols-rounded" [matTooltip]="nombreMarcador"
+            [ngStyle]="{'color': formMarcador.controls.color.value}">
+            {{formMarcador.controls.icono.value || 'add_reaction'}}
+          </mat-icon>
+          <span class="text-base">Vista Previa Marcador</span>
+        </div>
+      </div>
+
+      <div class="w-full flex justify-end gap-2">
+        <ng-container *ngIf="isEdit; else cancelButton">
+          <button mat-raised-button color="warn" type="button" (click)="eliminarMarcador()">
+            <mat-icon class="material-symbols-rounded">delete</mat-icon>
+            <span>Eliminar</span>
+          </button>
+        </ng-container>
+        <ng-template #cancelButton>
+          <button mat-stroked-button type="button" (click)="cancelar()">
+            <mat-icon class="material-symbols-rounded">close</mat-icon>
+            <span>Cancelar</span>
+          </button>
+        </ng-template>
+
+        <button mat-raised-button color="primary" [disabled]="formMarcador.invalid" (click)="guardarMarcador()">
+          <mat-icon class="material-symbols-rounded">add</mat-icon>
+          <span>guardar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-card>

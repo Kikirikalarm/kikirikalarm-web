@@ -12,6 +12,8 @@ import { AsistenteVirtualComponent } from './pages/asistente-virtual/asistente-v
 import { MarcadoresComponent } from './pages/marcadores/marcadores.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { ServicioAudioComponent } from './pages/servicio-audio/servicio-audio.component';
+import { CrearMarcadorComponent } from './components/crear-marcador/crear-marcador.component';
+import { SelectorIconComponent } from './components/selector-icon/selector-icon.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ServicioAudioComponent } from './pages/servicio-audio/servicio-audio.co
     AsistenteVirtualComponent,
     MarcadoresComponent,
     PerfilUsuarioComponent,
-    ServicioAudioComponent
+    ServicioAudioComponent,
+    CrearMarcadorComponent,
+    SelectorIconComponent
   ],
   imports: [
     IonicModule,

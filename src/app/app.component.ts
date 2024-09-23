@@ -3,10 +3,9 @@ import { Router } from '@angular/router';
 import { LoginService } from './modules/login/services/login.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Platform } from '@ionic/angular';
 import { AlarmasService } from './modules/kikirik/services/alarmas.service';
 import { MarcadorService } from './modules/kikirik/services/marcador.service';
-import { ConfigService } from './modules/kikirik/services/config.service';
+import { IconosService } from './modules/kikirik/services/iconos.service';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +18,9 @@ export class AppComponent implements OnInit {
     private loginService: LoginService,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private platform: Platform,
     private alarmasService: AlarmasService,
     private marcadorService: MarcadorService,
-    private configService: ConfigService
+    private IconosService: IconosService
   ) {
     this.registryIcons(iconRegistry, sanitizer);
     this.initializeApp();
@@ -78,5 +76,6 @@ export class AppComponent implements OnInit {
   async obtenerData() {
     await this.alarmasService.getAlarmasService();
     await this.marcadorService.getMarcadorService();
+    await this.IconosService.getIconsService();
   }
 }
