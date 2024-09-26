@@ -1,3 +1,50 @@
-<p>
-  perfil-usuario works!
-</p>
+<div class="container">
+  <mat-card>
+    <mat-card-title>
+      <span class="text-4xl font-bold mb-3">Perfil usuario</span>
+    </mat-card-title>
+    <mat-card-content>
+      <form class="example-form">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Nombre de usuario</mat-label>
+          <input matInput placeholder="" value="">
+          <mat-hint>Ingresa el nombre que quieres para tu usuario</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Nombres</mat-label>
+          <input matInput placeholder="" value="">
+          <mat-hint>Ingresa sus nombres</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Apellidos</mat-label>
+          <input matInput placeholder="" value="">
+          <mat-hint>Ingresa sus apellidos</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Correo electronico</mat-label>
+          <input matInput placeholder="" value="">
+          <mat-hint>Ingrese su correo electronico</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Telefono</mat-label>
+          <input matInput placeholder="" value="">
+          <mat-hint>Ingresa su numero de telefono</mat-hint>
+        </mat-form-field>
+        <mat-list>
+          <mat-list-item>
+            <span>Activar sugerencia IA</span>
+            <button matListItemMeta>
+              <mat-slide-toggle [hideIcon]="true" color="primary" class="mb-1"></mat-slide-toggle>
+            </button>
+          </mat-list-item>
+        </mat-list>
+        <button mat-raised-button color="primary" type="submit" class="w-full text-sm">
+          Guardar
+        </button>
+        <button mat-raised-button color="warn" (click)="showDeleteAccountModal()" class="w-full text-sm">
+          Eliminar cuenta
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
