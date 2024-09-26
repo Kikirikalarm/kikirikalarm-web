@@ -3,7 +3,7 @@
     <mat-card-title class="pb-10">
       <span class="text-4xl font-bold mb-3">Perfil usuario</span>
     </mat-card-title>
-    <mat-card-content>
+    <mat-card-content class="w-[328px]">
       <form>
         <div class="flex flex-col gap-y-4">
           <mat-form-field appearance="outline" class="w-full">
@@ -31,9 +31,9 @@
             <input matInput placeholder="" value="">
             <mat-hint>Ingresa su numero de telefono</mat-hint>
           </mat-form-field>
-          <mat-list class="gap-5">
+          <mat-list class="gap-y-5">
             <mat-list-item>
-              <span>Activar sugerencia IA</span>
+              <div matListItemTitle>Activar sugerencia IA</div>
               <button matListItemMeta>
                 <mat-slide-toggle [hideIcon]="true" color="primary"></mat-slide-toggle>
               </button>
